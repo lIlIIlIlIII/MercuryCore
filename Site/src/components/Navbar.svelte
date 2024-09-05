@@ -3,30 +3,31 @@
 	import Search from "$components/Search.svelte"
 	import User from "$components/User.svelte"
 	import { slide } from "svelte/transition"
+	import { _ } from "svelte-i18n"
 
 	export let data: import("../routes/$types").LayoutData
 
 	const { user } = data
 	const nav1 = [
 		// ["Home", "/", "fa-house-chimney"],
-		["Games", "/games", "fa-mountain-sun"],
-		["Catalog", "/catalog", "fa-book-open-cover"],
-		["Create", "/develop", "fa-plus"]
+		["Labels.Games", "/games", "fa-mountain-sun"],
+		["Labels.Catalog", "/catalog", "fa-book-open-cover"],
+		["Labels.Create", "/develop", "fa-plus"]
 	]
 	if (data.pages.includes("Forum"))
-		nav1.push(["Forum", "/forum", "fa-messages"])
+		nav1.push(["Labels.Forum", "/forum", "fa-messages"])
 	if (data.pages.includes("Groups"))
-		nav1.push(["Groups", "/groups", "fa-people-group"])
+		nav1.push(["Labels.Groups", "/groups", "fa-people-group"])
 
 	const usernav = [
-		["fa-money-bill-transfer", "Economy", "/economy"],
-		["fa-user-group", "Friends", "/requests"],
-		["fa-box-open-full", "Inventory", "/inventory"],
-		["fa-user-pen", "Character", "/character"],
-		["fa-gears", "Settings", "/settings"]
+		["fa-money-bill-transfer", "Labels.Economy", "/economy"],
+		["fa-user-group", "Labels.Friends", "/requests"],
+		["fa-box-open-full", "Labels.Inventory", "/inventory"],
+		["fa-user-pen", "Labels.Character", "/character"],
+		["fa-gears", "Labels.Settings", "/settings"]
 	]
 	if (user && user.permissionLevel >= 4)
-		usernav.unshift(["fa-diamond-half-stroke", "Admin", "/admin"])
+		usernav.unshift(["fa-diamond-half-stroke", "Labels.Admin.Short", "/admin"])
 </script>
 
 <nav class="py-0 justify-start z-11">
@@ -43,9 +44,9 @@
 		</a>
 		{#if user}
 			<div class="<lg:hidden pl-6 pr-2 flex flex-row pl-3">
-				{#each nav1 as [title, href]}
+				{#each nav1 as [label, href]}
 					<a class="btn light-text px-1 border-0" {href}>
-						{title}
+						{$_(label)}
 					</a>
 				{/each}
 			</div>
@@ -53,7 +54,7 @@
 			<div class="flex items-center gap-6">
 				<a
 					href="/notifications"
-					aria-label="Notifications"
+					aria-label="{$_(`Labels.Notifications`)}"
 					class="tooltip <lg:hidden font-bold light-text">
 					<fa fa-bell />
 				</a>
@@ -73,11 +74,11 @@
 						size="2.4rem" />
 					<div class="dropdown-content pt-2">
 						<ul class="p-2 rounded-3">
-							{#each usernav as [icon, title, href]}
+							{#each usernav as [icon, label, href]}
 								<li class="rounded-2">
-									<a class="btn light-text pl-4 pr-0" {href}>
+									<a class="btn light-text pl-4 pr-0 flex" {href}>
 										<fa class="{icon} pr-2" />
-										{title}
+										{$_(label)}
 									</a>
 								</li>
 							{/each}
@@ -90,7 +91,7 @@
 										<fa
 											fa-arrow-right-from-bracket
 											class="pr-2" />
-										<b>Log out</b>
+										<b>{$_("Labels.LogOut")}</b>
 									</button>
 								</form>
 							</li>
@@ -126,12 +127,12 @@
 		id="bottomnav"
 		class="lg:hidden fixed bottom-0 bg-darker w-full h-14 sm:h-16 z-11">
 		<div class="flex justify-evenly mx-auto w-full sm:w-1/2">
-			{#each [...nav1, ["Notifications", "/notifications", "fa-bell"]] as [title, href, icon]}
+			{#each [...nav1, ["Notifications", "/notifications", "fa-bell"]] as [label, href, icon]}
 				<a
 					{href}
 					class="btn light-text border-0 flex flex-col items-center text-0.9rem px-0.2rem sm:(text-base px-2)">
 					<fa class="{icon} pb-1 text-1.2rem sm:text-1.5rem" />
-					{title}
+					{$_(`Labels.${label}`)}
 				</a>
 			{/each}
 		</div>

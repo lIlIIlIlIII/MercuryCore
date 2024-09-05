@@ -44,7 +44,7 @@
 		<div class="sm:text-right <sm:pt-4">
 			<div class="flex <sm:flex-col sm:gap-3">
 				{#if data.pages.includes("Statistics")}
-					<a class="light-text" href="/statistics">{$_("common.statistics")}</a>
+					<a class="light-text" href="/statistics">{$_("Labels.Statistics")}</a>
 					<span>&ndash;</span>
 				{/if}
 				<button

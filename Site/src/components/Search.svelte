@@ -1,18 +1,20 @@
 <script lang="ts">
 	import { browser } from "$app/environment"
 	import { goto } from "$app/navigation"
+	import { _ } from "svelte-i18n"
 
 	export let pages: string[]
 
 	let search = ""
 	let searchCompleted = true
 	let searchFocus = -1
+	let searchText = $_("Labels.Search")
+
+    $: searchText = $_("Labels.Search") + (browser ? " (ctrl+k)" : "")
 	$: if (search === "") {
 		searchCompleted = true
 		searchFocus = -1
 	}
-
-	let searchText = "Search"
 
 	// only show after JS loads to allow for ctrl+k to be detected
 	new Promise(r => r(0)).then(() => {
@@ -23,11 +25,11 @@
 	const searchResults: HTMLElement[] = []
 
 	const searchCategories = [
-		["Users", "users"],
-		["Places", "places"],
-		["Catalog", "assets"]
+		["Labels.Users", "users"],
+		["Labels.Places", "places"],
+		["Labels.Catalog", "assets"]
 	]
-	if (pages.includes("Groups")) searchCategories.push(["Groups", "groups"])
+	if (pages.includes("Groups")) searchCategories.push(["Labels.Groups", "groups"])
 
 	function keydown(
 		e: KeyboardEvent & {
@@ -91,7 +93,7 @@
 		<div
 			id="results"
 			class="bg-darker absolute p-2 rounded-3 min-w-25vw max-w-full -translate-x-1/2 transition-all duration-300 ease-in-out z-10">
-			{#each searchCategories as [name, value], num}
+			{#each searchCategories as [label, value], num}
 				<button
 					bind:this={searchResults[num]}
 					on:click|preventDefault={() =>
@@ -99,9 +101,9 @@
 					class="btn light-text block w-full py-2 text-start"
 					name="c"
 					{value}
-					title="Search {name}">
-					Search <b class="break-all">{search}</b>
-					in {name}
+					title="{searchText} {$_(label)}">
+					{searchText} <b class="break-all">{search}</b>
+					in {$_(label)}
 				</button>
 			{/each}
 		</div>

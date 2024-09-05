@@ -1,5 +1,27 @@
 {
-    "common": {
-        "statistics": "Statistics"
+    "Labels": {
+        "Games": "Games",
+        "Catalog": "Catalog",
+        "Create": "Create",
+        "Forum": "Forum",
+        "Groups": "Groups",
+        "Search": "Search",
+        "Statistics": "Statistics",
+        "Notifications": "Notifications",
+        "Admin": {
+            "Short": "Admin",
+            "Long": "Administrator"
+        },
+        "Economy": "Economy",
+        "Friends": "Friends",
+        "Inventory": "Inventory",
+        "Character": "Character",
+        "Settings": "Settings",
+        "LogOut": "Log out",
+        "Users": "Users",
+        "Places": "Places"
+    },
+    "Messages": {
+        "Greeting": "Hi, {username}!"
     }
 }

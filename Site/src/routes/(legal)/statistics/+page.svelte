@@ -17,9 +17,9 @@
 	] = data.stats
 </script>
 
-<Head name={data.siteName} title="{$_("common.statistics")}" />
+<Head name={data.siteName} title="{$_("Labels.Statistics")}" />
 
-<h1 class="text-center">{$_("common.statistics")}</h1>
+<h1 class="text-center">{$_("Labels.Statistics")}</h1>
 
 <div class="ctnr pt-8 max-w-200 text-xl text-white">
 	<h2 class="pb-2">Total number of:</h2>
