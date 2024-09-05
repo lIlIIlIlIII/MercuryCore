@@ -5,6 +5,7 @@
 	import Textarea from "$components/forms/Textarea.svelte"
 	import beautifyCurrency from "$lib/beautifyCurrency"
 	import { superForm } from "sveltekit-superforms/client"
+	import { _ } from "svelte-i18n"
 
 	export let data
 
@@ -14,46 +15,46 @@
 	const [, c1, c2] = beautifyCurrency(data.price)
 </script>
 
-<Head name={data.siteName} title="Create a place" />
+<Head name={data.siteName} title="{$_("Pages.Games.Create.CreateAPlace")}" />
 
-<h1 class="text-center">Create a place</h1>
+<h1 class="text-center">{$_("Pages.Games.Create.CreateAPlace")}</h1>
 
 <Form
 	{formData}
 	nopad
 	class="ctnr pt-12 max-w-200 light-text"
-	submit="Create ({data.currencySymbol}{c1}{c2 ? '.' : ''}{c2})">
+	submit="{$_("Labels.Create")} ({data.currencySymbol}{c1}{c2 ? '.' : ''}{c2})">
 	<Input
 		{formData}
 		name="name"
-		label="Place name"
-		placeholder="Make sure to make it accurate" />
+		label="{$_("Pages.Games.Create.PlaceName")}"
+		placeholder="{$_("Pages.Games.Create.PlaceNamePlaceholder")}" />
 	<Textarea
 		{formData}
 		name="description"
-		label="Description"
-		placeholder="Up to 1000 characters" />
+		label="{$_("Labels.Description")}"
+		placeholder="{$_("Pages.Games.Create.DescriptionPlaceholder")}" />
 	<Input
 		{formData}
 		name="serverIP"
-		label="Server IP"
-		placeholder="You can use a URL instead of an IP if you wish" />
+		label="{$_("Pages.Games.Create.ServerIp")}"
+		placeholder="{$_("Pages.Games.Create.ServerIpPlaceholder")}" />
 	<Input
 		{formData}
 		type="number"
 		name="serverPort"
-		label="Server port"
+		label="{$_("Pages.Games.Create.ServerPort")}"
 		placeholder="1024-65536"
-		help="Using a port number lower than 49152 may not work correctly." />
+		help="{$_("Pages.Games.Create.ServerPortHelp")}" />
 	<Input
 		{formData}
 		type="number"
 		name="maxPlayers"
-		label="Player limit"
-		placeholder="1-99 players" />
+		label="{$_("Pages.Games.Create.MaxPlayers")}"
+		placeholder="1-99 {$_("Labels.Players")}" />
 	<Input
 		{formData}
 		type="checkbox"
 		name="privateServer"
-		label="Private server?" />
+		label="{$_("Pages.Games.Create.PrivateServer")}" />
 </Form>

@@ -3,19 +3,20 @@
 	import Head from "$components/Head.svelte"
 	import Pagination from "$components/Pagination.svelte"
 	import PlaceCard from "./PlaceCard.svelte"
+	import { _ } from "svelte-i18n"
 
 	export let data
 </script>
 
-<Head name={data.siteName} title="Discover" />
+<Head name={data.siteName} title="{$_("Labels.Discover")}" />
 
 <div class="ctnr">
 	<div class="flex pb-12 gap-4 <sm:flex-wrap">
 		<div class="flex w-full sm:w-1/2">
-			<h1 class="pr-6">Games</h1>
+			<h1 class="pr-6">{$_("Labels.Games")}</h1>
 			<a href="/games/create" class="btn btn-primary">
 				<fa fa-plus class="pr-2" />
-				Create
+				{$_("Labels.Create")}
 			</a>
 		</div>
 	</div>
@@ -29,6 +30,6 @@
 			<Pagination totalPages={data.pages} />
 		{/key}
 	{:else}
-		<h2 class="text-center">No games yet. Be the first to create one!</h2>
+		<h2 class="text-center">{$_("Pages.Games.NoGames")}</h2>
 	{/if}
 </div>

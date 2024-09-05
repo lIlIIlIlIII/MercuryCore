@@ -20,7 +20,10 @@
         "Settings": "Configuración",
         "LogOut": "Cerrar sesión",
         "Users": "Usuarios",
-        "Places": "Lugares"
+        "Places": "Lugares",
+        "Discover": "Descubrir",
+        "Description": "Descripción",
+        "Players": "Jugadores"
     },
     "Messages": {
         "Greeting": "¡Hola, {username}!"
@@ -30,6 +33,21 @@
             "PostAStatus": "Publica un estado",
             "NoStatusPosts": "¡Aún no hay publicaciones de estado. Sé el primero en publicar una!",
             "PostStatusPrompt": "Publica tu estado &ndash; ¡tus amigos y seguidores podrán ver cómo estás!"
+        },
+        "Games": {
+            "NoGames": "Aún no hay juegos. ¡Sé el primero en crear uno!",
+            "Create": {
+                "CreateAPlace": "Crear un lugar",
+                "PlaceName": "Nombre del lugar",
+                "PlaceNamePlaceholder": "Asegúrate de que sea preciso",
+                "DescriptionPlaceholder": "Hasta 1000 caracteres",
+                "ServerIp": "IP del servidor",
+                "ServerIpPlaceholder": "Puedes usar una URL en lugar de una IP si lo deseas",
+                "ServerPort": "Puerto del servidor",
+                "ServerPortHelp": "Usar un número de puerto inferior a 49152 puede no funcionar correctamente.",
+                "MaxPlayers": "Límite de jugadores",
+                "PrivateServer": "¿Servidor privado?"
+            }
         }
     }
 }
