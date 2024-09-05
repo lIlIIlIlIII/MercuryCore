@@ -38,18 +38,11 @@ export async function load({ locals }) {
 	const { user } = await authorise(locals)
 	// (main)/+layout.server.ts will handle most redirects for logged-out users, but sometimes errors for this page.
 
-	// lazy eval 💞
-	const greets = [
-		() => `Hi, ${user.username}!`,
-		() => `Hello, ${user.username}!`,
-	]
-
 	const [places, friends, feed] = await equery<
 		[Place[], BasicUser[], FeedPost[]]
 	>(homeQuery, { user: Record("user", user.id) })
 
 	return {
-		greet: greets[Math.floor(Math.random() * greets.length)](),
 		form: await superValidate(zod(schema)),
 		places,
 		friends,

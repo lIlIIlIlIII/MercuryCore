@@ -7,6 +7,7 @@
 	import fade from "$lib/fade"
 	import { superForm } from "sveltekit-superforms/client"
 	import Status from "./Status.svelte"
+	import { _ } from "svelte-i18n"
 
 	export let data
 
@@ -27,7 +28,7 @@
 				<User {user} size="6rem" bg="accent" image class="<sm:hidden" />
 				<User {user} size="4rem" bg="accent" image class="sm:hidden" />
 				<span class="pl-6">
-					{data.greet}
+					{$_("Messages.Greeting", { values: { username: user.username } })}
 				</span>
 			</a>
 		</h1>
