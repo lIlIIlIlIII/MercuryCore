@@ -3,7 +3,7 @@ import initQuery from "$lib/server/init.surql"
 import logo from "$lib/server/logo"
 import CustomHttpEngine, { realUrl } from "$lib/server/surrealEngine"
 import { error } from "@sveltejs/kit"
-import { green, red } from "picocolors"
+import color from "picocolors"
 import {
 	type PreparedQuery,
 	type QueryResult,
@@ -109,8 +109,8 @@ async function fixError<T>(q: () => Promise<T>) {
 // Make the query error/return/watever more readable, so we can see which are errors and which statement of the query failed
 const makeReadable = (r: QueryResult<unknown>) =>
 	r.status === "ERR"
-		? red(r.result)
-		: green(JSON.stringify(r.result, null, 2))
+		? color.red(r.result)
+		: color.green(JSON.stringify(r.result, null, 2))
 
 /**
  * Executes a query in SurrealDB and returns its results. Errors if the query failed.

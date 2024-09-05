@@ -1,9 +1,9 @@
 // Fun Unicode art 'logo', inspired by HybridOS
 
-import { blue, green, magenta } from "picocolors"
+import color from "picocolors"
 
 const logo = `
-  ██▙    ▟██ ${blue("Started")}
+  ██▙    ▟██ ${color.blue("Started")}
   ███▙  ▟███ ▟████▙ ▗████▛▗█████▌██   ██ ▟████▙▝█▙    ▗█▛
   ██▝█▙▟█▘██▐█▌  ▐█▌██▘   ██▘    ██   ██▐█▛     ▝█▙  ▗█▛
   ██ ▝██▘ ██▐█████▛ ██    ██     ██   ██▐█▌      ▝█▙▗█▛
@@ -11,9 +11,9 @@ const logo = `
   ▛▀      ▜█ ▜████▛ ██    ▝█████▙▝█████▘▐█▌       ▗█▛
   ▗██████▛                                       ▗█▛
   ██▘    ▗█████▖ ▟████▛▗█████▖                  ▗█▛
-  ██     ██   ██▐█▛    ██   ██ ${blue("Self-hostable MMO")}
-  ██     ██   ██▐█▌    ██████▘ ${blue("game creation platform:")}
-  ██▖    ██   ██▐█▌    ██      ${green("Build-your-own-Roblox")}
+  ██     ██   ██▐█▛    ██   ██ ${color.blue("Self-hostable MMO")}
+  ██     ██   ██▐█▌    ██████▘ ${color.blue("game creation platform:")}
+  ██▖    ██   ██▐█▌    ██      ${color.green("Build-your-own-Roblox")}
   ▝█████▙▝█████▘▐█▌    ▝█████▘
 `
 
@@ -22,5 +22,5 @@ let done = false
 export default () => {
 	if (done) return
 	done = true
-	console.log(magenta(logo))
+	console.log(color.magenta(logo))
 }

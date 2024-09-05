@@ -7,22 +7,22 @@ import { auth } from "$lib/server/lucia"
 import { Record, equery, surql } from "$lib/server/surreal"
 import { type Handle, redirect } from "@sveltejs/kit"
 import type { Cookie, User } from "lucia"
-import { blue, green, gray as grey, magenta, red, yellow } from "picocolors"
+import color from "picocolors"
 
 const methodColours = Object.freeze({
-	GET: green("GET"),
-	POST: yellow("POST"),
+	GET: color.green("GET"),
+	POST: color.yellow("POST"),
 })
 const pathnameColours = Object.freeze({
-	api: green,
-	download: yellow,
-	moderation: yellow,
-	report: yellow,
-	statistics: yellow,
-	register: blue,
-	login: blue,
-	place: magenta,
-	admin: red,
+	api: color.green,
+	download: color.yellow,
+	moderation: color.yellow,
+	report: color.yellow,
+	statistics: color.yellow,
+	register: color.blue,
+	login: color.blue,
+	place: color.magenta,
+	admin: color.red,
 })
 
 function pathnameColour(pathname: string) {
@@ -32,12 +32,12 @@ function pathnameColour(pathname: string) {
 }
 
 const time = () =>
-	config.Logging.Time ? grey(new Date().toLocaleString()) : ""
+	config.Logging.Time ? color.gray(new Date().toLocaleString()) : ""
 
 const userLog = (user: User | null) =>
 	user
-		? blue(user.username) + " ".repeat(21 - user.username.length)
-		: yellow("Logged-out user      ")
+		? color.blue(user.username) + " ".repeat(21 - user.username.length)
+		: color.yellow("Logged-out user      ")
 
 async function finish({ event, resolve }: Parameters<Handle>[0]) {
 	const { pathname, search } = event.url
@@ -128,5 +128,5 @@ export async function handleError({ event, error }) {
 
 	// Fancy error logging: time(?), user, and error
 	if (!config.Logging.FormattedErrors) console.error(error)
-	else console.error(time(), userLog(user), red(error as string))
+	else console.error(time(), userLog(user), color.red(error as string))
 }
