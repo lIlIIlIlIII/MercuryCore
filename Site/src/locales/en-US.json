@@ -1,5 +1,6 @@
 {
     "Labels": {
+        "Home": "Home",
         "Games": "Games",
         "Catalog": "Catalog",
         "Create": "Create",
@@ -23,5 +24,12 @@
     },
     "Messages": {
         "Greeting": "Hi, {username}!"
+    },
+    "Pages": {
+        "Home": {
+            "PostAStatus": "Post a status",
+            "NoStatusPosts": "No status posts yet. Be the first to post one!",
+            "PostStatusPrompt": "Post your status &ndash; your friends and followers can view how you're doing!"
+        }
     }
 }

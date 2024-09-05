@@ -1,5 +1,6 @@
 {
     "Labels": {
+        "Home": "Inicio",
         "Games": "Juegos",
         "Catalog": "Catálogo",
         "Create": "Crear",
@@ -23,5 +24,12 @@
     },
     "Messages": {
         "Greeting": "¡Hola, {username}!"
+    },
+    "Pages": {
+        "Home": {
+            "PostAStatus": "Publica un estado",
+            "NoStatusPosts": "¡Aún no hay publicaciones de estado. Sé el primero en publicar una!",
+            "PostStatusPrompt": "Publica tu estado &ndash; ¡tus amigos y seguidores podrán ver cómo estás!"
+        }
     }
 }

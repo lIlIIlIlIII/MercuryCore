@@ -16,7 +16,7 @@
 	export const snapshot = formData
 </script>
 
-<Head name={data.siteName} title="Home" />
+<Head name={data.siteName} title="{$_("Labels.Home")}" />
 
 <!-- Flex or Grid? what a dilemma -->
 <div class="ctnr lg:grid grid-cols-2 gap-4">
@@ -35,8 +35,7 @@
 		<div
 			class="card bg-darker rounded-2 p-4 <lg:max-h-50vh overflow-x-hidden lg:overflow-y-hidden">
 			<p>
-				Post your status &ndash; your friends and followers can view how
-				you're doing!
+				{@html $_("Pages.Home.PostStatusPrompt")}
 			</p>
 			<!-- fa-paper-plane-top (for unocss) -->
 			<Form
@@ -49,7 +48,7 @@
 					{formData}
 					inline
 					name="status"
-					placeholder="Post a status" />
+					placeholder="{$_("Pages.Home.PostAStatus")}" />
 			</Form>
 			{#if data.feed.length > 0}
 				<div class="flex flex-col gap-3 pt-3">
@@ -65,7 +64,7 @@
 				</div>
 			{:else}
 				<div class="p-4 pb-2">
-					No status posts yet. Be the first to post one!
+					{$_("Pages.Home.NoStatusPosts")}
 				</div>
 			{/if}
 		</div>

@@ -9,7 +9,7 @@
 
 	const { user } = data
 	const nav1 = [
-		// ["Home", "/", "fa-house-chimney"],
+		//["Labels.Home", "/", "fa-house-chimney"],
 		["Labels.Games", "/games", "fa-mountain-sun"],
 		["Labels.Catalog", "/catalog", "fa-book-open-cover"],
 		["Labels.Create", "/develop", "fa-plus"]
@@ -127,12 +127,12 @@
 		id="bottomnav"
 		class="lg:hidden fixed bottom-0 bg-darker w-full h-14 sm:h-16 z-11">
 		<div class="flex justify-evenly mx-auto w-full sm:w-1/2">
-			{#each [...nav1, ["Notifications", "/notifications", "fa-bell"]] as [label, href, icon]}
+			{#each [...nav1, ["Labels.Notifications", "/notifications", "fa-bell"]] as [label, href, icon]}
 				<a
 					{href}
 					class="btn light-text border-0 flex flex-col items-center text-0.9rem px-0.2rem sm:(text-base px-2)">
 					<fa class="{icon} pb-1 text-1.2rem sm:text-1.5rem" />
-					{$_(`Labels.${label}`)}
+					{$_(label)}
 				</a>
 			{/each}
 		</div>
