@@ -1,7 +1,15 @@
 <script lang="ts">
+	import { availableLocales, setLocale } from "$lib/i18n"
+	import { locale, _ } from "svelte-i18n"
+
 	export let data: import("../routes/$types").LayoutData
 
 	let clicked = false
+
+	function handleLocaleChanged(event: Event) {
+		const t = event.target as HTMLSelectElement;
+		setLocale(t.value);
+	}
 </script>
 
 <footer class="bg-darker relative flex justify-center <lg:pb-20!">
@@ -23,11 +31,20 @@
 			<span class="grey-text pl-1">
 				{new Date().getFullYear()}
 			</span>
+			<div class="relative mt-2">
+				<select on:change={handleLocaleChanged} value={$locale}>
+					{#each availableLocales as loc}
+						<option value={loc.code} selected={loc.code === $locale}>
+							{loc.label}
+						</option>
+					{/each}
+				</select>
+			</div>
 		</div>
 		<div class="sm:text-right <sm:pt-4">
 			<div class="flex <sm:flex-col sm:gap-3">
 				{#if data.pages.includes("Statistics")}
-					<a class="light-text" href="/statistics">Statistics</a>
+					<a class="light-text" href="/statistics">{$_("common.statistics")}</a>
 					<span>&ndash;</span>
 				{/if}
 				<button
