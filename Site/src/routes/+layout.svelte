@@ -6,11 +6,11 @@
 	import nprogress from "nprogress"
 	import { onMount } from "svelte"
 
-	import "/src/nprogress.css"
-	import "/src/global.css"
-	import "/src/icons.css"
-	import "/src/daisyui/dropdown.css"
-	import "/src/daisyui/tooltip.css"
+	import "/src/styles/nprogress.css"
+	import "/src/styles/global.css"
+	import "/src/styles/icons.css"
+	import "/src/styles/daisyui/dropdown.css"
+	import "/src/styles/daisyui/tooltip.css"
 	import "uno.css"
 
 	export let data

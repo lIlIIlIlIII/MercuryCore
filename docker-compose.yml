@@ -6,6 +6,7 @@ services:
         # not :nightly because doing that once caused failures when graph linking
         # and also caused errors with query parameters (twice)
         image: surrealdb/surrealdb:v1.5.4
+        user: ":"
         ports:
             - 8000:8000
         restart: unless-stopped
