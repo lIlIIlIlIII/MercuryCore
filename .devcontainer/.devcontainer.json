@@ -1,0 +1,18 @@
+{
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "1YiB.svelte-bundle",
+                "ms-vscode.vscode-typescript-next",
+                "pkief.material-icon-theme",
+                "biomejs.biome"
+            ],
+            "settings": {
+                "workbench.iconTheme": "material-icon-theme"
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/audacioustux/devcontainers/bun:latest": {}
+    }
+}
