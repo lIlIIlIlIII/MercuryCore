@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { _ } from "svelte-i18n"
 	import Head from "$components/Head.svelte"
 
 	export let data
@@ -17,9 +16,9 @@
 	] = data.stats
 </script>
 
-<Head name={data.siteName} title="{$_("Labels.Statistics")}" />
+<Head name={data.siteName} title="{$_("Global.Statistics")}" />
 
-<h1 class="text-center">{$_("Labels.Statistics")}</h1>
+<h1 class="text-center">{$_("Global.Statistics")}</h1>
 
 <div class="ctnr pt-8 max-w-200 text-xl text-white">
 	<h2 class="pb-2">Total number of:</h2>

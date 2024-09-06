@@ -16,7 +16,7 @@
 	export const snapshot = formData
 </script>
 
-<Head name={data.siteName} title="{$_("Labels.Home")}" />
+<Head name={data.siteName} title="{$_("Global.Home")}" />
 
 <!-- Flex or Grid? what a dilemma -->
 <div class="ctnr lg:grid grid-cols-2 gap-4">

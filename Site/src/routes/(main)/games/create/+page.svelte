@@ -23,7 +23,7 @@
 	{formData}
 	nopad
 	class="ctnr pt-12 max-w-200 light-text"
-	submit="{$_("Labels.Create")} ({data.currencySymbol}{c1}{c2 ? '.' : ''}{c2})">
+	submit="{$_("Global.Create")} ({data.currencySymbol}{c1}{c2 ? '.' : ''}{c2})">
 	<Input
 		{formData}
 		name="name"
@@ -32,7 +32,7 @@
 	<Textarea
 		{formData}
 		name="description"
-		label="{$_("Labels.Description")}"
+		label="{$_("Global.Description")}"
 		placeholder="{$_("Pages.Games.Create.DescriptionPlaceholder")}" />
 	<Input
 		{formData}
@@ -51,7 +51,7 @@
 		type="number"
 		name="maxPlayers"
 		label="{$_("Pages.Games.Create.MaxPlayers")}"
-		placeholder="1-99 {$_("Labels.Players")}" />
+		placeholder="1-99 {$_("Global.Players")}" />
 	<Input
 		{formData}
 		type="checkbox"

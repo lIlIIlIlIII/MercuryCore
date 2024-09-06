@@ -8,15 +8,15 @@
 	export let data
 </script>
 
-<Head name={data.siteName} title="{$_("Labels.Discover")}" />
+<Head name={data.siteName} title="{$_("Global.Discover")}" />
 
 <div class="ctnr">
 	<div class="flex pb-12 gap-4 <sm:flex-wrap">
 		<div class="flex w-full sm:w-1/2">
-			<h1 class="pr-6">{$_("Labels.Games")}</h1>
+			<h1 class="pr-6">{$_("Global.Games")}</h1>
 			<a href="/games/create" class="btn btn-primary">
 				<fa fa-plus class="pr-2" />
-				{$_("Labels.Create")}
+				{$_("Global.Create")}
 			</a>
 		</div>
 	</div>
@@ -30,6 +30,6 @@
 			<Pagination totalPages={data.pages} />
 		{/key}
 	{:else}
-		<h2 class="text-center">{$_("Pages.Games.NoGames")}</h2>
+		<h2 class="text-center">{$_("Pages.Games.GamesEmpty")}</h2>
 	{/if}
 </div>

@@ -8,9 +8,9 @@
 	let search = ""
 	let searchCompleted = true
 	let searchFocus = -1
-	let searchText = $_("Labels.Search")
+	let searchText = $_("Global.Search")
 
-    $: searchText = $_("Labels.Search") + (browser ? " (ctrl+k)" : "")
+    $: searchText = $_("Global.Search") + (browser ? " (ctrl+k)" : "")
 	$: if (search === "") {
 		searchCompleted = true
 		searchFocus = -1
@@ -25,11 +25,11 @@
 	const searchResults: HTMLElement[] = []
 
 	const searchCategories = [
-		["Labels.Users", "users"],
-		["Labels.Places", "places"],
-		["Labels.Catalog", "assets"]
+		["Global.Users", "users"],
+		["Global.Places", "places"],
+		["Global.Catalog", "assets"]
 	]
-	if (pages.includes("Groups")) searchCategories.push(["Labels.Groups", "groups"])
+	if (pages.includes("Groups")) searchCategories.push(["Global.Groups", "groups"])
 
 	function keydown(
 		e: KeyboardEvent & {

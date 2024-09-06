@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { enhance } from "$app/forms"
 	import { page } from "$app/stores"
 	import Asset from "$components/Asset.svelte"
 	import Head from "$components/Head.svelte"
 	import Pagination from "$components/Pagination.svelte"
 	import TabData from "$components/TabData"
 	import TabNav from "$components/TabNav.svelte"
+	import { _ } from "svelte-i18n"
 
 	export let data
 
@@ -23,11 +23,11 @@
 	$: assets = data.assets.filter(a => a.type === tabTypes[tabData.currentTab])
 </script>
 
-<Head name={data.siteName} title="Catalog" />
+<Head name={data.siteName} title="{$_("Global.Catalog")}" />
 
 <div class="ctnr light-text">
 	<div class="grid lg:grid-cols-[1fr_2fr] md:grid-cols-[1fr_3fr] pb-4">
-		<h1>Catalog</h1>
+		<h1>{$_("Global.Catalog")}</h1>
 	</div>
 
 	<!-- <div class="grid gap-2 lg:grid-cols-[1fr_5fr] md:(grid-cols-[1fr_4fr] gap-4)"> -->
@@ -116,7 +116,7 @@
 				{/key}
 			{:else}
 				<h2 class="pt-12 text-center">
-					No assets exist in this category yet.
+					{$_("Pages.Catalog.CategoryEmpty")}
 				</h2>
 			{/if}
 		</div>

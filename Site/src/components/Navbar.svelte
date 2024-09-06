@@ -9,25 +9,25 @@
 
 	const { user } = data
 	const nav1 = [
-		//["Labels.Home", "/", "fa-house-chimney"],
-		["Labels.Games", "/games", "fa-mountain-sun"],
-		["Labels.Catalog", "/catalog", "fa-book-open-cover"],
-		["Labels.Create", "/develop", "fa-plus"]
+		//["Global.Home", "/", "fa-house-chimney"],
+		["Global.Games", "/games", "fa-mountain-sun"],
+		["Global.Catalog", "/catalog", "fa-book-open-cover"],
+		["Global.Create", "/develop", "fa-plus"]
 	]
 	if (data.pages.includes("Forum"))
-		nav1.push(["Labels.Forum", "/forum", "fa-messages"])
+		nav1.push(["Global.Forum", "/forum", "fa-messages"])
 	if (data.pages.includes("Groups"))
-		nav1.push(["Labels.Groups", "/groups", "fa-people-group"])
+		nav1.push(["Global.Groups", "/groups", "fa-people-group"])
 
 	const usernav = [
-		["fa-money-bill-transfer", "Labels.Economy", "/economy"],
-		["fa-user-group", "Labels.Friends", "/requests"],
-		["fa-box-open-full", "Labels.Inventory", "/inventory"],
-		["fa-user-pen", "Labels.Character", "/character"],
-		["fa-gears", "Labels.Settings", "/settings"]
+		["fa-money-bill-transfer", "Global.Economy", "/economy"],
+		["fa-user-group", "Global.Friends", "/requests"],
+		["fa-box-open-full", "Global.Inventory", "/inventory"],
+		["fa-user-pen", "Global.Character", "/character"],
+		["fa-gears", "Global.Settings", "/settings"]
 	]
 	if (user && user.permissionLevel >= 4)
-		usernav.unshift(["fa-diamond-half-stroke", "Labels.Admin.Short", "/admin"])
+		usernav.unshift(["fa-diamond-half-stroke", "Global.Admin.Short", "/admin"])
 </script>
 
 <nav class="py-0 justify-start z-11">
@@ -54,7 +54,7 @@
 			<div class="flex items-center gap-6">
 				<a
 					href="/notifications"
-					aria-label="{$_(`Labels.Notifications`)}"
+					aria-label="{$_(`Global.Notifications`)}"
 					class="tooltip <lg:hidden font-bold light-text">
 					<fa fa-bell />
 				</a>
@@ -91,7 +91,7 @@
 										<fa
 											fa-arrow-right-from-bracket
 											class="pr-2" />
-										<b>{$_("Labels.LogOut")}</b>
+										<b>{$_("Global.LogOut")}</b>
 									</button>
 								</form>
 							</li>
@@ -127,7 +127,7 @@
 		id="bottomnav"
 		class="lg:hidden fixed bottom-0 bg-darker w-full h-14 sm:h-16 z-11">
 		<div class="flex justify-evenly mx-auto w-full sm:w-1/2">
-			{#each [...nav1, ["Labels.Notifications", "/notifications", "fa-bell"]] as [label, href, icon]}
+			{#each [...nav1, ["Global.Notifications", "/notifications", "fa-bell"]] as [label, href, icon]}
 				<a
 					{href}
 					class="btn light-text border-0 flex flex-col items-center text-0.9rem px-0.2rem sm:(text-base px-2)">

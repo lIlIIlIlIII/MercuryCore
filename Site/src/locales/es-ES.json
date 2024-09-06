@@ -1,9 +1,10 @@
 {
-    "Labels": {
+    "Global": {
         "Home": "Inicio",
         "Games": "Juegos",
         "Catalog": "Catálogo",
         "Create": "Crear",
+        "Creations": "Creaciones",
         "Forum": "Foro",
         "Groups": "Grupos",
         "Search": "Buscar",
@@ -23,7 +24,15 @@
         "Places": "Lugares",
         "Discover": "Descubrir",
         "Description": "Descripción",
-        "Players": "Jugadores"
+        "Players": "Jugadores",
+        "Develop": "Desarrollar",
+        "Shirts": "Camisas",
+        "Shirt": "Camisa",
+        "T-Shirt": "Camiseta",
+        "T-Shirts": "Camisetas",
+        "Pants": "Pantalones",
+        "Decals": "Calcomanías",
+        "Decal": "Calcomanía"
     },
     "Messages": {
         "Greeting": "¡Hola, {username}!"
@@ -35,7 +44,7 @@
             "PostStatusPrompt": "Publica tu estado &ndash; ¡tus amigos y seguidores podrán ver cómo estás!"
         },
         "Games": {
-            "NoGames": "Aún no hay juegos. ¡Sé el primero en crear uno!",
+            "GamesEmpty": "Aún no hay juegos. ¡Sé el primero en crear uno!",
             "Create": {
                 "CreateAPlace": "Crear un lugar",
                 "PlaceName": "Nombre del lugar",
@@ -48,6 +57,13 @@
                 "MaxPlayers": "Límite de jugadores",
                 "PrivateServer": "¿Servidor privado?"
             }
+        },
+        "Catalog": {
+            "CategoryEmpty": "Aún no existen activos en esta categoría."
+        },
+        "Develop": {
+            "SearchPlaceholder": "Buscar un artículo",
+            "CreateBack": "Volver a Desarrollar"
         }
     }
 }

@@ -5,23 +5,30 @@
 	import Tab from "$components/Tab.svelte"
 	import TabData from "$components/TabData"
 	import TabNav from "$components/TabNav.svelte"
+	import { _ } from "svelte-i18n"
 
 	export let data
 
-	const assetTypes = [
-		["Shirts", "🧥", "11"],
-		["T-Shirts", "👕", "2"],
-		["Pants", "👖", "12"],
-		["Decals", "🖼️", "13"]
+	$: assetTypes = [
+		[$_("Global.Shirts"), "🧥", "11"],
+		[$_("Global.T-Shirts"), "👕", "2"],
+		[$_("Global.Pants"), "👖", "12"],
+		[$_("Global.Decals"), "🖼️", "13"]
 	]
 
-	let tabData = TabData(data.url, ["Create", "Creations"])
-	let tabData2 = TabData(data.url, ["Shirts", "T-Shirts", "Pants", "Decals"])
+	// TODO: when using $: tabs cant be switched
+	let tabData = TabData(data.url, [$_("Global.Create"), $_("Global.Creations")])
+	let tabData2 = TabData(data.url, [
+		$_("Global.Shirts"), 
+		$_("Global.T-Shirts"), 
+		$_("Global.Pants"), 
+		$_("Global.Decals")
+	])
 </script>
 
-<Head name={data.siteName} title="Create" />
+<Head name={data.siteName} title="{$_("Global.Create")}" />
 
-<h1 class="text-center pb-4">Create</h1>
+<h1 class="text-center pb-4">{$_("Global.Create")}</h1>
 
 <div class="px-4 pt-6">
 	<SidebarShell bind:tabData space>
@@ -51,12 +58,12 @@
 						<input
 							type="text"
 							name="q"
-							placeholder="Search for an item"
-							aria-label="Search for an item"
+							placeholder="{$_("Pages.Develop.SearchPlaceholder")}"
+							aria-label="{$_("Pages.Develop.SearchPlaceholder")}"
 							aria-describedby="button-addon2" />
 						<button
 							class="btn btn-secondary"
-							aria-label="Search"
+							aria-label="{$_("Global.Search")}"
 							id="button-addon2">
 							<fa fa-search />
 						</button>

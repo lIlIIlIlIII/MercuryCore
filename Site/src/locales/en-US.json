@@ -1,9 +1,10 @@
 {
-    "Labels": {
+    "Global": {
         "Home": "Home",
         "Games": "Games",
         "Catalog": "Catalog",
         "Create": "Create",
+        "Creations": "Creations",
         "Forum": "Forum",
         "Groups": "Groups",
         "Search": "Search",
@@ -23,7 +24,15 @@
         "Places": "Places",
         "Discover": "Discover",
         "Description": "Description",
-        "Players": "Players"
+        "Players": "Players",
+        "Develop": "Develop",
+        "Shirts": "Shirts",
+        "Shirt": "Shirt",
+        "T-Shirt": "T-Shirt",
+        "T-Shirts": "T-Shirts",
+        "Pants": "Pants",
+        "Decals": "Decals",
+        "Decal": "Decal"
     },
     "Messages": {
         "Greeting": "Hi, {username}!"
@@ -35,7 +44,7 @@
             "PostStatusPrompt": "Post your status &ndash; your friends and followers can view how you're doing!"
         },
         "Games": {
-            "NoGames": "No games yet. Be the first to create one!",
+            "GamesEmpty": "No games yet. Be the first to create one!",
             "Create": {
                 "CreateAPlace": "Create a place",
                 "PlaceName": "Place name",
@@ -48,6 +57,13 @@
                 "MaxPlayers": "Player limit",
                 "PrivateServer": "Private server?"
             }
+        },
+        "Catalog": {
+            "CategoryEmpty": "No assets exist in this category yet."
+        },
+        "Develop": {
+            "SearchPlaceholder": "Search for an item",
+            "CreateBack": "Back to Develop"
         }
     }
 }

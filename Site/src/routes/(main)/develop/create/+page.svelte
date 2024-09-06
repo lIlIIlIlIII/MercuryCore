@@ -6,6 +6,7 @@
 	import Textarea from "$components/forms/Textarea.svelte"
 	import beautifyCurrency from "$lib/beautifyCurrency"
 	import { superForm } from "sveltekit-superforms/client"
+	import { _ } from "svelte-i18n"
 
 	export let data
 
@@ -22,13 +23,13 @@
 	})
 </script>
 
-<Head name={data.siteName} title="Develop - Create" />
+<Head name={data.siteName} title="{$_("Global.Develop")} - {$_("Global.Create")}" />
 
 <div class="text-center">
-	<h1>Develop &ndash; Create</h1>
+	<h1>{$_("Global.Develop")} &ndash; {$_("Global.Create")}</h1>
 	<a href="/develop" class="no-underline accent-text">
 		<fa fa-caret-left />
-		Back to Develop
+		{$_("Pages.Develop.CreateBack")}
 	</a>
 </div>
 
@@ -36,7 +37,7 @@
 	{formData}
 	nopad
 	enctype="multipart/form-data"
-	submit="Create ({data.currencySymbol}{c1}{c2 ? '.' : ''}{c2})"
+	submit="{$_("Global.Create")} ({data.currencySymbol}{c1}{c2 ? '.' : ''}{c2})"
 	class="ctnr pt-8 max-w-200 light-text">
 	<Select
 		{formData}
